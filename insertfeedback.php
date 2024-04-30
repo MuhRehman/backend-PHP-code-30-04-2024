@@ -62,6 +62,7 @@
                 $result = "You have Insert a record successfully!";
                 echo $result;
             }
+            
             else{
                 $result = "Failed ";
             }
