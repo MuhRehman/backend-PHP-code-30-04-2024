@@ -31,25 +31,25 @@
 
 
         // $productname = "testing1";
-        $productname = $dData['productName'];
+        $feedbackId = $dData['productName'];
         // $productmname = "testing2";
-        $productmname = $dData['menufacturerName'];
+        $feeddbackuserId = $dData['feeddbackuserId'];
         // $productmodel = "testing3";
-        $productmodel = $dData['modelName'];
+        $productfeedback = $dData['feedback'];
         // $productprice = "testing4";
-        $productprice = $dData['productPrice'];
+        $productrating = $dData['productrating'];
         // $productimg = "testing11";
-        $productimg = $dData['productImg'];
+        $feedbackdatatime = $dData['datatime'];
         
-        $producttype = $dData['productType'];
  
         $result = "";
 
       
  
-        if($productname != "" and $productmname != "" and $productmodel != "" and $productprice != "" ){
+        // if($productname != "" and $productmname != "" and $productmodel != "" and $productprice != "" ){
             // $sql = "INSERT INTO productsinfo(pname, pmname, pmodel, pprice, pimg ) VALUES('productname1','productmname1',' 'productmodel1', 'productprice1','1productimg');";
-            $sql = "INSERT INTO productsinfo (pname, pmname, pmodel,ptype, pprice, pimg) VALUES ('$productname', '$productmname', '$productmodel','$producttype', '$productprice', '$productimg')";
+            // id		feedback	rating	datetime
+            $sql = "INSERT INTO feedback(id, userId,feedback, rating, datetime) VALUES ('$feedbackId','$feeddbackuserId','$productfeedback','$productrating','$feedbackdatatime')";
        
             // $sql = "INSERT INTO productsinfo(pname, pmname, pmodel, pprice, pimg ) VALUES('$productname','$productmname',' '$productmodel', '$productprice','$productimg');";
             
@@ -66,10 +66,10 @@
             else{
                 $result = "Failed ";
             }
-        }
-        else{
-            $result = "Successfull ";
-        }
+        // }
+        // else{
+        //     $result = "Successfull ";
+        // }
  
         $mysqli -> close();
         $response[] = array("result" => $result);

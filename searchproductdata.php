@@ -47,7 +47,7 @@
       
  
         $mysqli -> close();
-    $response[] = $resultProduct;
+    $response = $resultProduct;
         // $response[] = array("result" => $result);
 
         echo json_encode($response);

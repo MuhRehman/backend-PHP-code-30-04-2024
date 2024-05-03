@@ -35,13 +35,12 @@
             $res = mysqli_query($mysqli, $sql);
 
           
-          
             if ($res) {
-                $result = "You have registered successfully!";
-
+                $result = "You Have Registered Successfully!";
             } else {
                 $result = "";
             }
+            
         } else {
             $result = "";
         }

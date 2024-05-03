@@ -22,18 +22,15 @@
         
       
 
-        $result = "";
-        $resultProduct = "";
- 
-       
-
-     
+            $result = "";
+            $resultProduct = "";
+    
+        
             $sql = "SELECT * FROM productsinfo";
              
             $res = mysqli_query($mysqli, $sql);
            
      
-           
             if (mysqli_num_rows($res) != 0) {
             
             // Fetch all
