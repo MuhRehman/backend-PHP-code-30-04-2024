@@ -31,25 +31,27 @@
 
 
         // $productname = "testing1";
-        $feedbackId = $dData['productName'];
+        $feedbackId = $dData['userid'];
         // $productmname = "testing2";
         $feeddbackuserId = $dData['feeddbackuserId'];
         // $productmodel = "testing3";
-        $productfeedback = $dData['feedback'];
+        $productfeedback = $dData['userfeedback'];
         // $productprice = "testing4";
-        $productrating = $dData['productrating'];
+        // $productrating = $dData['userratings'];
+        $productrating = "45";
         // $productimg = "testing11";
-        $feedbackdatatime = $dData['datatime'];
+        $feedbackdatatime = $dData['feedbackDatetime'];
         
  
         $result = "";
 
       
  
-        // if($productname != "" and $productmname != "" and $productmodel != "" and $productprice != "" ){
+        // if($productfeedback != ""  ){
             // $sql = "INSERT INTO productsinfo(pname, pmname, pmodel, pprice, pimg ) VALUES('productname1','productmname1',' 'productmodel1', 'productprice1','1productimg');";
             // id		feedback	rating	datetime
-            $sql = "INSERT INTO feedback(id, userId,feedback, rating, datetime) VALUES ('$feedbackId','$feeddbackuserId','$productfeedback','$productrating','$feedbackdatatime')";
+            $sql = "INSERT INTO feedback(id, userId,feedback, rating, datetimetext) VALUES 
+            ('$feedbackId','33','$productfeedback','$productrating','$feedbackdatatime')";
        
             // $sql = "INSERT INTO productsinfo(pname, pmname, pmodel, pprice, pimg ) VALUES('$productname','$productmname',' '$productmodel', '$productprice','$productimg');";
             
