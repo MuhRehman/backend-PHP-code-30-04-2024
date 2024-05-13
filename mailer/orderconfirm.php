@@ -20,15 +20,14 @@
         $eData = file_get_contents("php://input");
         $dData = json_decode($eData, true);
  
-        $user = $dData['user'];
-        $email = $dData['email'];
-        $pass = $dData['pass'];
-        $role = $dData['roleid'];
+        $user = $dData['fname'];
+        $email = $dData['orderemail'];
+        $orderaddress = $dData['orderaddress'];
         
         
         $result = "";
  
-        if ($user != "" && $email != "" && $pass != "") {
+        // if ($user != "" && $email != "" && $pass != "") {
             // echo "Connected Not insert!";exit;
             $sql = "INSERT INTO users(name, email, password, roleid) VALUES('$user', '$email', '$pass', '$role');";
           
@@ -41,9 +40,9 @@
                 $result = "failed";
             }
             
-        } else {
-            $result = "";
-        }
+        // } else {
+        //     $result = "";
+        // }
  
         $mysqli -> close();
         $response[] = array("result" => $result);
@@ -61,9 +60,9 @@
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\SMTP;
 
-   $user_names = $dData['user'];
-   $user_namesa = $dData['user'];
-   $send_to_email = $dData['email'];
+   $user_names = $dData['fname'];
+   $user_namesa = $dData['orderaddress'];
+   $send_to_email = $dData['orderemail'];
     // $pass = $dData['pass'];
 
 function sendMail($send_to_email, $user_namesa, $user_names) {
@@ -90,7 +89,7 @@ function sendMail($send_to_email, $user_namesa, $user_names) {
     $mail->Subject = "Account Activation";
 
     // You can change the Body Message according to your requirement!
-    $mail->Body = "Hello , {$user_names}\nYour account registration is successfully Online Bazaar !  {$user_namesa}.";
+    $mail->Body = "Hello , {$user_names}\nYour Order is successfully Online Bazaar !  {$user_namesa}.";
     $mail->send();
   
     echo "Successfully to connect to Sent";
