@@ -20,9 +20,9 @@
         $eData = file_get_contents("php://input");
         $dData = json_decode($eData, true);
  
-        $user = $dData['user'];
-        $email = $dData['email'];
-        $pass = $dData['pass'];
+        $user = $dData['fname'];
+        $email = $dData['orderemail'];
+        $pass = $dData['orderaddress'];
         $role = $dData['roleid'];
         
         
@@ -61,9 +61,9 @@
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\SMTP;
 
-   $user_names = $dData['user'];
-   $user_namesa = $dData['user'];
-   $send_to_email = $dData['email'];
+   $user_names = $dData['fname'];
+   $user_namesa = $dData['fname'];
+   $send_to_email = $dData['orderemail'];
     // $pass = $dData['pass'];
 
 function sendMail($send_to_email, $user_namesa, $user_names) {
