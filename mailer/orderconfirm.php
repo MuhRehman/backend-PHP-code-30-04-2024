@@ -20,16 +20,17 @@
         $eData = file_get_contents("php://input");
         $dData = json_decode($eData, true);
  
-        $user = $dData['fname'];
-        $email = $dData['orderemail'];
+        $fname = $dData['fname'];
+        $orderemail = $dData['orderemail'];
         $orderaddress = $dData['orderaddress'];
+        $orderid = $dData['orderid'];
         
         
         $result = "";
  
-        // if ($user != "" && $email != "" && $pass != "") {
+        if ($fname != "" && $orderemail != "" ) {
             // echo "Connected Not insert!";exit;
-            $sql = "INSERT INTO users(name, email, password, roleid) VALUES('$user', '$email', '$pass', '$role');";
+            $sql = "INSERT INTO users(fname, orderemail, orderaddress, orderid) VALUES('$fname', '$orderemail', '$orderaddress', '$orderid');";
           
             $res = mysqli_query($mysqli, $sql);
 
@@ -40,9 +41,9 @@
                 $result = "failed";
             }
             
-        // } else {
-        //     $result = "";
-        // }
+        } else {
+            $result = "";
+        }
  
         $mysqli -> close();
         $response[] = array("result" => $result);
