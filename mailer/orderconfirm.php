@@ -86,10 +86,10 @@ function sendMail($send_to_email, $user_namesa, $user_names) {
     $mail->addAddress($send_to_email);
 
     // You can change the subject according to your requirement!
-    $mail->Subject = "Account Activation";
+    $mail->Subject = " Confirmation of Successful Order Dispatch";
 
     // You can change the Body Message according to your requirement!
-    $mail->Body = "Hello , {$user_names}\nYour Order is successfully Online Bazaar !  {$user_namesa}.";
+    $mail->Body = "Hello , {$user_names}\nYour order has been successfully dispatched and confirmed. !  {$user_namesa}.";
     $mail->send();
   
     echo "Successfully to connect to Sent";
